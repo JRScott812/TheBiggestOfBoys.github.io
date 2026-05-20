@@ -4,28 +4,12 @@ title: Home
 permalink: /
 ---
 
-<h1>My Amazing Website</h1>
+# Jake Scott's Website
 
-<section class="about">
-  <h1>About Me:</h1>
-  <h2>
-    I'm a student interested in software development and technology in general.
-    During an internship I had over the summer, I worked with <a href="https://clovernook.org/">Clovernook Center
-    for the Blind & Visually Impaired</a> in developing an AR (Augmented Reality) navigation app for the
-    Microsoft HoloLens. That was a great opportunity to learn new programming skills and tools, like Unity.
-    It was great to see technology have such a direct impact on improving peoples' lives.
-  </h2>
-</section>
+## About Me
 
-<section class="latest-projects">
-  <h2>Projects (placeholders)</h2>
-  <ul>
-    {% for project in site.projects %}
-      <li>
-        <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-        {% if project.excerpt %} — {{ project.excerpt }}{% endif %}
-        {% if project.published == false %} <em>(placeholder)</em>{% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-</section>
+I'm a college student pursuing a BA in Computer Science -- Digital Media, with a minor in Cybersecurity.
+
+### About this site
+
+Here you can see what I'm working on.  Feel free to explore!

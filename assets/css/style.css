@@ -1,83 +1,146 @@
-/* Ported from General.css */
-/* General Styles */
-body {
-	background-color: rgb(45, 45, 45);
-	color: white;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 8px;
-	padding-top: 80px;
-	/* Adjust this value to match the height of your navbar */
+/* ==================================================
+   CSS VARIABLES & THEME
+   ================================================== */
+
+:root {
+	/* Colors */
+	--color-bg-dark: rgb(45, 45, 45);
+	--color-bg-lighter: #5d5d5d;
+	--color-text: white;
+	--color-text-muted: #ccc;
+	--color-accent: #00ff00;
+	--color-accent-alt: rgb(75, 75, 255);
+	--color-nav-hover: #444;
+	--color-border: #333;
+
+	/* Spacing */
+	--spacing-xs: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 16px;
+	--spacing-lg: 20px;
+	--spacing-xl: 80px;
+
+	/* Transitions */
+	--transition-standard: 0.3s ease-in-out;
+
+	/* Layout */
+	--navbar-height: 80px;
+	--navbar-height-mobile: 120px;
+
+	/* Typography */
+	--font-family: Arial, sans-serif;
+	--font-size-base: 1rem;
+	--font-size-h1: 44px;
+	--font-size-h2-mobile: 8vw;
+	--font-size-h3: 16px;
+	--font-size-nav: 1.5em;
+	--font-size-nav-tablet: 1.2em;
+	--font-size-button: 24px;
+
+	/* Z-index */
+	--z-navbar: 1000;
+	--z-footer: 1000;
 }
 
-h1 {
-	font-size: 44px;
-	color: white;
+/* ==================================================
+   GLOBAL STYLES
+   ================================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
 	margin: 0;
-	padding: 16px 0;
-	transition: color 0.3s ease-in-out;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	background-color: var(--color-bg-dark);
+	color: var(--color-text);
+	font-family: var(--font-family);
+	padding: var(--spacing-sm);
+	padding-top: var(--navbar-height);
+}
+
+/* ==================================================
+   TYPOGRAPHY
+   ================================================== */
+
+h1 {
+	font-size: var(--font-size-h1);
+	color: var(--color-text);
+	margin: 0;
+	padding: var(--spacing-md) 0;
+	transition: color var(--transition-standard);
 }
 
 h2 {
-	color: white;
-	padding: 8px 16px;
+	color: var(--color-text);
+	padding: var(--spacing-sm) var(--spacing-md);
 	text-align: justify;
 	margin: 0;
-	transition: color 0.3s ease-in-out;
+	transition: color var(--transition-standard);
 }
 
 h2 a {
-	color: green;
+	color: var(--color-accent);
 	text-decoration: none;
-	transition: color 0.3s ease-in-out;
+	transition: color var(--transition-standard);
 }
 
 h2 a:hover {
-	color: rgb(75, 75, 255);
+	color: var(--color-accent-alt);
 }
 
 h3 {
-	font-size: 16px;
-	color: white;
+	font-size: var(--font-size-h3);
+	color: var(--color-text);
 	text-align: left;
 	margin: 0;
-	padding: 8px 0;
-	transition: color 0.3s ease-in-out;
+	padding: var(--spacing-sm) 0;
+	transition: color var(--transition-standard);
 }
 
 img {
 	vertical-align: middle;
 }
 
-/* Button Styles */
+/* ==================================================
+   BUTTONS
+   ================================================== */
+
 button {
-	font-size: 24px;
+	font-size: var(--font-size-button);
 	background-color: gray;
-	padding: 8px 16px;
-	margin: 4px 16px;
+	padding: var(--spacing-sm) var(--spacing-md);
+	margin: var(--spacing-xs) var(--spacing-md);
 	border: none;
 	border-radius: 5px;
-	/* Rounded corners for buttons */
-	color: white;
-	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-button:hover {
-	background-color: rgb(45, 45, 45);
+	color: var(--color-text);
+	transition: background-color var(--transition-standard), color var(--transition-standard);
 	cursor: pointer;
 }
 
-/* Navigation Bar */
+button:hover {
+	background-color: var(--color-bg-dark);
+}
+
+/* ==================================================
+   NAVIGATION BAR
+   ================================================== */
+
 nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 1000;
-	background: #5d5d5d;
-	padding: 16px;
+	z-index: var(--z-navbar);
+	background: var(--color-bg-lighter);
+	padding: var(--spacing-md);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	/* Add shadow for depth */
-	transition: background 0.3s ease-in-out;
+	transition: background var(--transition-standard);
 }
 
 nav ul {
@@ -90,125 +153,136 @@ nav ul {
 }
 
 nav li {
-	margin: 0 10px;
-	/* Add horizontal spacing between items */
+	margin: 0 var(--spacing-lg);
 	padding: 0;
 }
 
 nav li a {
 	display: block;
-	color: #fff;
+	color: var(--color-text);
 	text-align: center;
-	font-size: 1.5em;
-	/* Default font size */
+	font-size: var(--font-size-nav);
 	text-decoration: none;
-	padding: 10px 20px;
-	/* Added padding */
-	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
-	/* Smooth transition */
+	padding: var(--spacing-lg) var(--spacing-md);
+	transition: background-color var(--transition-standard), color var(--transition-standard),
+		transform var(--transition-standard);
 	border-radius: 5px;
-	/* Rounded corners */
 }
 
 nav li a:hover {
-	background-color: #444;
-	color: #00ff00;
-	/* Add hover color */
+	background-color: var(--color-nav-hover);
+	color: var(--color-accent);
 	transform: scale(1.1);
-	/* Smooth scale transition */
 }
 
 nav li a:active {
 	background: #555;
-	color: #fff;
+	color: var(--color-text);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-	nav ul {
-		flex-direction: column;
-		/* Stack items vertically */
-		align-items: center;
-		/* Center items */
-	}
+/* ==================================================
+   FOOTER
+   ================================================== */
 
-	nav li {
-		margin: 5px 0;
-		/* Vertical spacing between items */
-	}
-
-	nav li a {
-		font-size: 1.2em;
-		/* Adjusted font size for tablets */
-		padding: 12px 15px;
-		/* Adjusted padding */
-	}
-
-	body {
-		padding-top: 120px;
-		/* Adjust this value for smaller screens */
-	}
-
-	h1 {
-		font-size: 8vw;
-		/* Adjust font size for tablets */
-	}
-
-	h2 {
-		font-size: 6vw;
-	}
-}
-
-@media (max-width: 480px) {
-	h1 {
-		font-size: 10vw;
-		/* Larger text for small screens */
-	}
-
-	h2 {
-		font-size: 8vw;
-	}
-
-	body {
-		padding-top: 120px;
-		/* Adjust this value for smaller screens */
-	}
-}
-
-/* Footer */
 footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	background-color: #5d5d5d;
-	color: #fff;
-	padding: 10px 0;
+	background-color: var(--color-bg-lighter);
+	color: var(--color-text);
+	padding: var(--spacing-lg) 0;
 	text-align: center;
-	z-index: 1000;
-	/* Ensures it stays on top of other content */
+	z-index: var(--z-footer);
 }
 
 .footer-links {
 	display: flex;
 	justify-content: center;
-	gap: 20px;
-	/* Space between links */
+	gap: var(--spacing-lg);
 }
 
 .footer-links a {
-	color: #fff;
+	color: var(--color-text);
 	text-decoration: none;
-	transition: transform 0.3s ease-in-out;
-	/* Add transition for hover effect */
-}
-
-.footer-links img {
-	vertical-align: middle;
-	transition: 0.3s ease-in-out;
+	transition: transform var(--transition-standard);
 }
 
 .footer-links a:hover img {
 	transform: scale(1.1);
-	/* Scale up on hover */
-	transition: 0.3s ease-in-out;
+}
+
+.footer-links img {
+	vertical-align: middle;
+	transition: transform var(--transition-standard);
+}
+
+/* ==================================================
+   MAIN CONTENT
+   ================================================== */
+
+main {
+	padding-bottom: var(--navbar-height);
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN
+   ================================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+	nav ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nav li {
+		margin: var(--spacing-xs) 0;
+	}
+
+	nav li a {
+		font-size: var(--font-size-nav-tablet);
+		padding: var(--spacing-md) var(--spacing-sm);
+	}
+
+	body {
+		padding-top: var(--navbar-height-mobile);
+	}
+
+	h1 {
+		font-size: 8vw;
+	}
+
+	h2 {
+		font-size: 6vw;
+	}
+
+	main {
+		padding-bottom: var(--navbar-height-mobile);
+	}
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+	nav li a {
+		font-size: var(--font-size-nav-tablet);
+		padding: var(--spacing-md) var(--spacing-sm);
+	}
+
+	body {
+		padding: var(--spacing-xs);
+		padding-top: var(--navbar-height-mobile);
+	}
+
+	h1 {
+		font-size: 10vw;
+	}
+
+	h2 {
+		font-size: 8vw;
+		padding: var(--spacing-sm) 0;
+	}
+
+	main {
+		padding-bottom: var(--navbar-height-mobile);
+	}
 }
