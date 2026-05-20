@@ -1,4 +1,4 @@
-# Jake-Scott.com
+# JRScott812.GitHub.io
 
 This repository contains a simple static site. I converted the site to a Jekyll-compatible structure and added placeholders for future projects.
 
@@ -22,4 +22,3 @@ Adding projects
 
 Create a markdown file in `_projects/` with front matter (title, date, tags, excerpt, image, published).
 Set `published: true` to have it appear on the site.
-

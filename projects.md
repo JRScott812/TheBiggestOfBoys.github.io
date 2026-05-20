@@ -4,25 +4,29 @@ title: Projects
 permalink: /projects/
 ---
 
-<h1>Projects</h1>
+# Projects
 
-{% assign published_projects = site.projects | where: "published", true %}
+## Browser Extensions
 
-{% if published_projects.size > 0 %}
-  <ul>
-  {% for project in published_projects %}
-    <li>
-      <a href="{{ project.url | relative_url }}">{{ project.title }}</a> — {{ project.excerpt }}
-    </li>
-  {% endfor %}
-  </ul>
-{% else %}
-  <p>No published projects yet. Here are placeholders:</p>
-  <ul>
-  {% for project in site.projects %}
-    <li>
-      <a href="{{ project.url | relative_url }}">{{ project.title }}</a> {% if project.published == false %}<em>(placeholder)</em>{% endif %}
-    </li>
-  {% endfor %}
-  </ul>
-{% endif %}
+- **Project Title** – Short description of what the project does.
+  - [GitHub](https://github.com/user/repo) • [Store Page](https://store-link.com)
+
+## Mobile Apps
+
+- **Another Project** – Brief overview of this project.
+  - [GitHub](https://github.com/user/repo) • [Store Page](https://store-link.com)
+
+## Desktop Apps
+
+- **Desktop Project** – Description here.
+  - [GitHub](https://github.com/user/repo) • [Store Page](https://store-link.com)
+
+## Websites/Web Apps
+
+- **Web Project** – Description here.
+  - [GitHub](https://github.com/user/repo) • [Website](https://example.com)
+
+## Misc
+
+- **Web Project** – Description here.
+  - [GitHub](https://github.com/user/repo) • [Website](https://example.com)
