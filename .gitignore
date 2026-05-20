@@ -1,0 +1,8 @@
+_site/
+.sass-cache/
+.bundle/
+/.jekyll-cache/
+vendor/bundle/
+*.gem
+node_modules/
+*.log
