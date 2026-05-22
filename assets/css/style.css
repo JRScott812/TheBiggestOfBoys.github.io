@@ -155,16 +155,16 @@ h6 {
 }
 
 h1 {
-	font-size: var(--text-5xl);
+	font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl));
 	letter-spacing: -0.02em;
 }
 
 h2 {
-	font-size: var(--text-3xl);
+	font-size: clamp(var(--text-2xl), 6vw, var(--text-3xl));
 }
 
 h3 {
-	font-size: var(--text-2xl);
+	font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
 }
 
 h4 {
@@ -253,13 +253,14 @@ nav {
 	backdrop-filter: blur(10px);
 	background-color: rgba(13, 27, 42, 0.95);
 	box-shadow: var(--shadow-lg);
+	padding: 0 clamp(var(--spacing-4), 2vw, var(--spacing-12));
 }
 
 nav ul {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: var(--spacing-8);
+	gap: clamp(var(--spacing-4), 3vw, var(--spacing-8));
 	height: 100%;
 	list-style: none;
 	margin: 0;
@@ -276,13 +277,14 @@ nav a {
 	display: flex;
 	align-items: center;
 	height: 100%;
-	padding: 0 var(--spacing-4);
-	font-size: var(--text-sm);
+	padding: 0 clamp(var(--spacing-2), 1.5vw, var(--spacing-4));
+	font-size: clamp(var(--text-xs), 1.2vw, var(--text-sm));
 	font-weight: var(--font-weight-semibold);
 	color: var(--text-secondary);
 	text-decoration: none;
 	transition: all var(--transition-fast);
 	position: relative;
+	white-space: nowrap;
 }
 
 nav a::after {
@@ -385,10 +387,10 @@ button:active {
    ================================================== */
 
 main {
-	padding: var(--spacing-12) var(--spacing-6);
+	padding: clamp(var(--spacing-6), 4vh, var(--spacing-12)) clamp(var(--spacing-4), 3vw, var(--spacing-6));
 	margin: 0 auto;
 	max-width: var(--max-width);
-	min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+	min-height: calc(100vh - var(--navbar-height));
 }
 
 .container {
@@ -399,7 +401,7 @@ main {
 
 .grid {
 	display: grid;
-	gap: var(--spacing-6);
+	gap: clamp(var(--spacing-4), 2vw, var(--spacing-6));
 }
 
 .grid-2 {
@@ -432,7 +434,7 @@ main {
 	background: var(--bg-secondary);
 	border: 1px solid var(--primary-600);
 	border-radius: var(--radius-xl);
-	padding: var(--spacing-6);
+	padding: clamp(var(--spacing-4), 3vw, var(--spacing-6));
 	transition: all var(--transition-base);
 	box-shadow: var(--shadow-sm);
 }
@@ -511,6 +513,53 @@ main {
 	padding: var(--spacing-4) var(--spacing-6) var(--spacing-6) var(--spacing-6);
 }
 
+/* Profile Cards */
+.profile-card {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-4);
+	padding: var(--spacing-4) var(--spacing-6);
+	background: var(--bg-secondary);
+	border: 1px solid var(--primary-600);
+	border-radius: var(--radius-xl);
+	transition: all var(--transition-base);
+	box-shadow: var(--shadow-sm);
+	text-decoration: none;
+	color: inherit;
+}
+
+.profile-card:hover {
+	border-color: var(--accent-primary);
+	box-shadow: var(--shadow-lg);
+	transform: translateY(-4px);
+}
+
+.profile-icon {
+	width: 48px;
+	height: 48px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+.profile-info {
+	flex: 1;
+	min-width: 0;
+}
+
+.profile-name {
+	font-size: var(--text-lg);
+	font-weight: var(--font-weight-bold);
+	color: var(--text-primary);
+	margin: 0;
+	margin-bottom: var(--spacing-1);
+}
+
+.profile-username {
+	font-size: var(--text-sm);
+	color: var(--text-muted);
+	margin: 0;
+}
+
 /* ==================================================
    FOOTER
    ================================================== */
@@ -557,7 +606,7 @@ footer {
    ================================================== */
 
 section {
-	margin-bottom: var(--spacing-16);
+	margin-bottom: clamp(var(--spacing-8), 6vh, var(--spacing-16));
 }
 
 section h2 {
@@ -630,22 +679,12 @@ section h2 {
 
 	main {
 		padding: var(--spacing-8) var(--spacing-4);
-		min-height: calc(100vh - var(--navbar-height-mobile) - var(--footer-height));
+		min-height: calc(100vh - var(--navbar-height-mobile));
 	}
 
 	.grid-2,
 	.grid-3 {
 		grid-template-columns: 1fr;
-	}
-
-	footer {
-		height: auto;
-		padding: var(--spacing-4);
-	}
-
-	.footer-links {
-		flex-wrap: wrap;
-		gap: var(--spacing-4);
 	}
 }
 
